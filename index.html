@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+<title>Restaurant Magdalena</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="mystyle.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Open Sans Condensed", sans-serif}
+p {margin-top: 0;margin-bottom: 0;}
+a {text-decoration: none;}
+.menu {display: none}
+.bgimg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("art.jpg");
+  min-height: 90%;
+}
+</style>
+
+<body>
+
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+<!-- small sidebar -->
+<div class="w3-hide-large w3-hide-medium">
+  <div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display: none;z-index: 5;" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-jumbo" onclick="w3_close()">&times;</button>
+    <a href="#" class="w3-bar-item w3-button w3-xlarge" onclick="w3_close()"><i class="fa fa-home"></i></a>
+    <a href="#menu" class="w3-bar-item w3-button w3-xlarge" onclick="w3_close()">Menu</a>
+    <a href="#contact2" class="w3-bar-item w3-button w3-xlarge" onclick="w3_close()">Horaires</a>
+    <a href="#about2" class="w3-bar-item w3-button w3-xlarge" onclick="w3_close()">À propos</a>
+  </div>
+</div>
+
+<!-- small hamburger button -->
+<div class="w3-top w3-hide-large w3-hide-medium">
+  <div class="w3-bar w3-xlarge w3-black">
+    <button class="w3-button w3-black w3-xlarge" onclick="w3_open()">&#9776;</button>
+  </div>
+</div>
+
+<!-- medium and large navbar -->
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-large w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
+    <a href="#menu" class="w3-bar-item w3-button">Menu</a>
+    <a href="#contact" class="w3-bar-item w3-button">Horaires</a>
+    <a href="#about" class="w3-bar-item w3-button">À propos</a>
+  </div>
+</div>
+
+<!-- header with picture -->
+<header class="bgimg w3-display-container w3-grayscale-min w3-animate-opacity" id="home">
+  <div class="w3-display-middle w3-center w3-broken-white">
+  	<div class="w3-padding-large w3-text-indigo">
+  	<!-- large and medium -->
+    <span class="w3-hide-small" style="font-family:'Open Sans Condensed';font-size:100px">restaurant<br>MAGDALENA</span>
+    <!-- small -->
+    <span class="w3-hide-large w3-hide-medium" style="font-family:'Open Sans Condensed';font-size:50px">restaurant<br>MAGDALENA</span>
+    <!-- large and medium -->
+    <p><a href="#menu" class="w3-button w3-xlarge w3-indigo w3-hover-red w3-hide-small">Voir le menu</a></p>
+    <!-- small -->
+    <p><a href="#menu" class="w3-button w3-medium w3-indigo w3-hover-red w3-hide-large w3-hide-medium">Voir le menu</a></p>
+  	</div>
+  </div>
+</header>
+
+<div class="w3-container w3-padding-small w3-white"></div>
+
+<!-- big menu container -->
+<div class="w3-container w3-broken-white w3-padding-64 w3-xlarge" id="menu">
+  <div class="w3-content w3-white w3-border w3-border-grey">
+
+    <h1 class="w3-center w3-jumbo w3-text-indigo" style="margin:64px;">LE MENU</h1>
+
+    <!-- Les pizzas Les menus La carte -->
+    <div class="w3-row w3-center w3-border w3-white w3-border-white">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'menu', 'tablink', 'lesPizzas');" id="myLink">
+        <div class="w3-col s4 tablink w3-padding-small w3-hover-indigo">Les pizzas</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'menu', 'tablink', 'lesMenus');">
+        <div class="w3-col s4 tablink w3-padding-small w3-hover-indigo">Les menus</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'menu', 'tablink', 'laCarte');">
+        <div class="w3-col s4 tablink w3-padding-small w3-hover-indigo">La carte</div>
+      </a>
+    </div>
+
+    <!-- les pizzas -->
+    <div id="lesPizzas" class="w3-container menu w3-padding-16 w3-white w3-animate-opacity">
+
+      <p><b>Margherita </b><span class="w3-tag w3-orange w3-round">Midi</span><span class="w3-right w3-tag w3-dark-grey w3-round">9,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage</p>
+      <hr>
+
+      <p><b>Italianna </b><span class="w3-tag w3-orange w3-round">Midi</span><span class="w3-right w3-tag w3-dark-grey w3-round">9,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage</p>
+      <hr>
+
+      <p><b>Tartiflette </b><span class="w3-tag w3-orange w3-round">Midi</span><span class="w3-right w3-tag w3-dark-grey w3-round">9,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage</p>
+      <hr>
+
+      <p><b>Coq </b><span class="w3-tag w3-orange w3-round">Midi</span><span class="w3-right w3-tag w3-dark-grey w3-round">9,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage</p>
+      <hr>
+
+      <p><b>Chèvre </b><span class="w3-tag w3-orange w3-round">Midi</span><span class="w3-right w3-tag w3-dark-grey w3-round">9,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage</p>
+      <hr>
+
+      <p><b>Spéciale </b><span class="w3-tag w3-orange w3-round">Midi</span><span class="w3-right w3-tag w3-dark-grey w3-round">9,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage</p>
+      <hr>
+
+      <p><b>Romaine </b><span class="w3-tag w3-orange w3-round">Midi</span><span class="w3-right w3-tag w3-dark-grey w3-round">9,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage</p>
+      <hr>
+
+      <p><b>3 jambons </b><span class="w3-tag w3-orange w3-round">Midi</span><span class="w3-right w3-tag w3-dark-grey w3-round">9,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage</p>
+      <hr>
+
+      <p><b>Merguez </b><span class="w3-tag w3-orange w3-round">Midi</span><span class="w3-right w3-tag w3-dark-grey w3-round">9,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage</p>
+      <hr>
+
+      <p><b>Champignon </b><span class="w3-tag w3-orange w3-round">Midi</span><span class="w3-right w3-tag w3-dark-grey w3-round">9,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage</p>
+      <hr>
+
+      <p><b>Classica </b><span class="w3-right w3-tag w3-dark-grey w3-round">9,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage</p>
+      <hr>
+      
+      <p><b>Calzone</b><span class="w3-right w3-tag w3-dark-grey w3-round">10,90€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, anchois, olive, câpre</p>
+      <hr>
+
+      <p><b>Sicilienne</b><span class="w3-right w3-tag w3-dark-grey w3-round">10,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, anchois, olive, câpre</p>
+      <hr>
+
+      <p><b>Reine</b><span class="w3-right w3-tag w3-dark-grey w3-round">10,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, épaule, champignon</p>
+      <hr>
+
+      <p><b>Paysanne</b><span class="w3-right w3-tag w3-dark-grey w3-round">11,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, lardon, crème fraîche</p>
+      <hr>
+
+      <p><b>4 fromages</b><span class="w3-right w3-tag w3-dark-grey w3-round">11,90€</span></p>
+      <p class="w3-text-grey">Tomate, mozzarella, 4 fromages différents</p>
+      <hr>
+
+      <p><b>Milano</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, champignon, oignon, poivron, chorizo</p>
+      <hr>
+
+      <p><b>Texas</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, viande hachée, oignon, chorizo</p>
+      <hr>
+
+      <p><b>Chicken</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,90€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, poulet, poivron, oignon</p>
+      <hr>
+
+      <p><b>Orientale</b><span class="w3-right w3-tag w3-dark-grey w3-round">11,90€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, merguez, oeuf, olive</p>
+      <hr>
+
+      <p><b>Calabria</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, thon, champignon, oignon</p>
+      <hr>
+
+      <p><b>4 stagioni</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, épaule, artichaut, poivron, olive, champignon</p>
+      <hr>
+
+      <p><b>Magdalena</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, épaule, champignon, chorizo, oeuf, origan</p>
+      <hr>
+
+      <p><b>Spécial maison</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, crottin de chavignol, épaule, oeuf, champignon</p>
+      <hr>
+
+      <p><b>Mama Lucia</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,90€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, aubergine, jambon, champignon, origan</p>
+      <hr>
+
+      <p><b>Sublissima</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,90€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, oignon, viande hachée, pomme de terre, parmesan</p>
+      <hr>
+
+      <p><b>Lardela</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, lardon fumé, pomme de terre, crème fraîche, origan</p>
+      <hr>
+
+      <p><b>Végétarienne</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, aubergine, artichaut, poivron, olive, champignon, origan</p>
+      <hr>
+
+      <p><b>Gourmande</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,90€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, viande hachée, gorgonzola, crème fraîche</p>
+      <hr>
+
+      <p><b>Chavignol</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,90€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, crottin de chèvre</p>
+      <hr>
+
+      <p><b>Capricciosa</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,50€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, gorgonzola, jambon, champignon</p>
+      <hr>
+
+      <p><b>4 jambons</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,90€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, épaule, coppa, salami, mortadelle</p>
+      <hr>
+
+      <p><b>Parma</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,90€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, jambon de Parme</p>
+      <hr>
+
+      <p><b>Piscator</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,50€</span></p>
+      <p class="w3-text-grey">Tomate, cocktail de fruits de mer (moule, crevette, calamar), ail</p>
+      <hr>
+
+      <p><b>Pacifique</b><span class="w3-right w3-tag w3-dark-grey w3-round">14,90€</span></p>
+      <p class="w3-text-grey">Crème fraîche, fromage, saumon, crème citron</p>
+      <hr>
+
+      <p><b>5 fromages</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,50€</span></p>
+      <p class="w3-text-grey">Crème fraîche, fromage, jambon, champignon, oignon, oeuf</p>
+      <hr>
+
+      <p><b>Bianca</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,50€</span></p>
+      <p class="w3-text-grey">Crème fraîche, fromage, jambon, champignon, oignon, oeuf</p>
+      <hr>
+
+      <p><b>Turbo</b><span class="w3-right w3-tag w3-dark-grey w3-round">16,90€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, viande hachée, merguez, chorizo, poivron, olive</p>
+      <hr>
+
+      <p><b>Mama Mia</b><span class="w3-right w3-tag w3-dark-grey w3-round">14,90€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, oignon, rumsteack, garniture salade et frite</p>
+      <hr>
+
+      <p><b>Saint-Jacques</b><span class="w3-right w3-tag w3-dark-grey w3-round">16,90€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, coquille Saint-Jacques, champignon, crème fraîche, ail</p>
+      <hr>
+
+      <p><b>Dolce Magdalena</b><span class="w3-right w3-tag w3-dark-grey w3-round">18,90€</span></p>
+      <p class="w3-text-grey">Tomate, fromage, crevette, coquille Saint-Jacques, saumon fumé, crème fraîche</p>
+
+    </div>
+
+    <!-- les menus -->
+    <div id="lesMenus" class="w3-container menu w3-padding-16 w3-white w3-animate-opacity">
+
+      <p><b>Pasta </b><span class="w3-tag w3-orange w3-round">Midi</span><span class="w3-right w3-tag w3-dark-grey w3-round">10,90€</span></p>
+      <p class="w3-text-dark-grey">Spaghetti ou Penne à la sauce</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Napolitaine</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Thon</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Bolognaise</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Arrabiata</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Pesto</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Carbonara</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Rosa</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Champignon</p>
+      <p class="w3-text-dark-grey">Boisson</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Coca-Cola 33cl</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Verre de vin italien</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Jus de fruit</p>
+      <hr>
+      <p><b>Pizza </b><span class="w3-tag w3-orange w3-round">Midi</span><span class="w3-right w3-tag w3-dark-grey w3-round">11,90€</span></p>
+      <p class="w3-text-dark-grey">Pizza</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Margherita</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Italiana</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Tartiflette</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Coq</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Chèvre</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Spéciale</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Romaine</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">3 jambons</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Merguez</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Champignon</p>
+      <p class="w3-text-dark-grey">Boisson</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Coca-Cola 33cl</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Verre de vin italien</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Jus de fruit</p>
+      <p class="w3-text-dark-grey">Café</p>
+      <hr>
+      <p><b>Entrée + plat ou plat + dessert </b><span class="w3-tag w3-orange w3-round">Midi</span><span class="w3-right w3-tag w3-dark-grey w3-round">12,90€</span></p>
+      <hr>
+      <p><b>Entrée + plat + dessert </b><span class="w3-tag w3-orange w3-round">Midi</span><span class="w3-right w3-tag w3-dark-grey w3-round">15,90€</span></p>
+      <hr>
+      <p class="w3-text-dark-grey">Entrée</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Oeufs à la mayonnaise</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Salade printanière</p>
+      <p class="w3-text-dark-grey">Plat</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Plat du jour</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Emincé de poulet à la crème accompagné de pâtes</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Escalope panée accompagnée de pâtes</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Calamar napolitain accompagné de riz</p>
+      <p class="w3-text-dark-grey">Pizza</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Napolitaine</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Calzone</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Campione</p>
+      <p class="w3-text-dark-grey">Dessert</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Glace 2 boules</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Crème brûlée</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Tiramisu</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Mousse au chocolat</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Fromage blanc au coulis</p>
+      <hr>
+      <p><b>Plat + dessert </b><span class="w3-tag w3-amber w3-round">Enfant</span> <span class="w3-tag w3-orange w3-round">Midi</span><span class="w3-right w3-tag w3-dark-grey w3-round">7,90€</span></p>
+      <p class="w3-text-dark-grey">Pizza bambino</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Margherita</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Coq</p>
+      <p class="w3-text-dark-grey">Spaghetti ou Penne à la sauce</p>
+      <p class="w3-tag w3-light-blue w3-round w3-large">Bolognaise</p>
+      <p class="w3-text-dark-grey">Steak haché grillé + frites</p>
+      <p class="w3-text-dark-grey">Desserts au choix</p>
+
+    </div>
+
+    <!-- la carte -->
+    <div id="laCarte" class="w3-container menu w3-padding-16 w3-white w3-animate-opacity">
+
+      <div class="w3-row w3-center w3-indigo w3-border w3-border-white">
+
+      <a href="javascript:void(0)" onclick="openMenu(event, 'laCarte', 'tablink2', 'escalope');" id="myLink2">
+        <div class="w3-col s4 tablink2 w3-padding-small w3-hover-white">Escalope</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'laCarte', 'tablink2', 'grillade');">
+        <div class="w3-col s4 tablink2 w3-padding-small w3-hover-white">Grillade</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'laCarte', 'tablink2', 'poisson');">
+        <div class="w3-col s4 tablink2 w3-padding-small w3-hover-white">Poisson</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'laCarte', 'tablink2', 'entree');">
+        <div class="w3-col s4 tablink2 w3-padding-small w3-hover-white">Entrée</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'laCarte', 'tablink2', 'charcuterie');">
+        <div class="w3-col s4 tablink2 w3-padding-small w3-hover-white">Charcuterie</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'laCarte', 'tablink2', 'pasta');">
+        <div class="w3-col s4 tablink2 w3-padding-small w3-hover-white">Pasta</div>
+      </a>
+       <a href="javascript:void(0)" onclick="openMenu(event, 'laCarte', 'tablink2', 'fromage');">
+        <div class="w3-col s6 tablink2 w3-padding-small w3-hover-white">Fromage</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'laCarte', 'tablink2', 'boisson');">
+        <div class="w3-col s6 tablink2 w3-padding-small w3-hover-white">Boisson</div>
+      </a>
+
+      </div>
+
+      <!-- escalope -->
+      <div id="escalope" class="w3-container laCarte w3-padding-16 w3-white w3-animate-opacity">
+
+        <p><b>Escalope milanaise</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,90€</span></p>
+        <p class="w3-text-grey">Escalope de veau pané</p>
+        <hr>
+
+        <p><b>Escalope citron</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,50€</span></p>
+        <p class="w3-text-grey">Escalope de veau, citron, crème fraîche</p>
+        <hr>
+
+        <p><b>Escalope au marsala</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,50€</span></p>
+        <p class="w3-text-grey">Escalope de veau, champignon, marsala, crème fraîche</p>
+        <hr>
+
+        <p><b>Escalope pizzaïola</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,50€</span></p>
+        <p class="w3-text-grey">Escalope de veau, olive, câpre, anchois, ail, sauce tomate, ail blanc</p>
+        <hr>
+
+        <p><b>Escalope Normande</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,50€</span></p>
+        <p class="w3-text-grey">Escalope de veau, champignon, crème fraîche</p>
+        <hr>
+
+        <p><b>Escalope gorgonzola</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,90€</span></p>
+        <p class="w3-text-grey">Escalope de veau, gorgonzola, champignon, crème fraîche</p>
+        <hr>
+
+        <p><b>Saltimbocca à la Romaine</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,90€</span></p>
+        <p class="w3-text-grey">Escalope de veau, parme, mozzarella, crème fraîche</p>
+        <hr>
+
+        <p><b>Escalope Magdalena</b><span class="w3-right w3-tag w3-dark-grey w3-round">15,90€</span></p>
+        <p class="w3-text-grey">Escalope de veau, jambon de Parme, petits pois, champignon, mozzarella, crème fraîche</p>
+        <hr>
+
+        <p><b>Osso buco</b><span class="w3-right w3-tag w3-dark-grey w3-round">14,50€</span></p>
+        <p class="w3-text-grey">Jarret de veau</p>
+
+      </div>
+
+      <!-- grillade -->
+      <div id="grillade" class="w3-container laCarte w3-padding-16 w3-white w3-animate-opacity">
+
+        <p><b>Côtes d'agneau</b><span class="w3-right w3-tag w3-dark-grey w3-round">14,90€</span></p>
+        <hr>
+
+        <p><b>Escalope de veau</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,90€</span></p>
+        <hr>
+
+        <p><b>Entrecôte</b><span class="w3-right w3-tag w3-dark-grey w3-round">16,90€</span></p>
+        <hr>
+
+        <p><b>Pavé de boeuf</b><span class="w3-right w3-tag w3-dark-grey w3-round">15,90€</span></p>
+
+      </div>
+
+      <!-- poisson -->
+      <div id="poisson" class="w3-container laCarte w3-padding-16 w3-white w3-animate-opacity">
+
+        <p><b>Calmars à l'Américaine</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,90€</span></p>
+        <hr>
+
+        <p><b>Calmars frits</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,50€</span></p>
+        <hr>
+
+        <p><b>Filets de sole - sauce du chef</b><span class="w3-right w3-tag w3-dark-grey w3-round">14,90€</span></p>
+        <hr>
+
+        <p><b>Coquille Saint-Jacques à la provençale</b><span class="w3-right w3-tag w3-dark-grey w3-round">18,90€</span></p>
+        <hr>
+
+        <p><b>Gambas grillés</b><span class="w3-right w3-tag w3-dark-grey w3-round">17,90€</span></p>
+        <hr>
+
+        <p><b>Pavé de saumon grillé</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,90€</span></p>
+
+      </div>
+
+      <!-- entrée -->
+      <div id="entree" class="w3-container laCarte w3-padding-16 w3-white w3-animate-opacity">
+
+        <p><b>Salade mixte</b><span class="w3-right w3-tag w3-dark-grey w3-round">7,90€</span></p>
+        <p class="w3-text-grey">Mélange de salades vertes, tomate, concombre, carotte râpée, maïs, olive noire</p>
+        <hr>
+
+        <p><b>Oeuf à la mayonnaise</b><span class="w3-right w3-tag w3-dark-grey w3-round">6,90€</span></p>
+        <hr>
+
+        <p><b>Avocat à la vinaigrette</b><span class="w3-right w3-tag w3-dark-grey w3-round">7,90€</span></p>
+        <hr>
+
+        <p><b>Carpaccio de saumon</b><span class="w3-right w3-tag w3-dark-grey w3-round">10,90€</span></p>
+        <p class="w3-text-grey">Frite</p>
+        <hr>
+
+        <p><b>Carpaccio de boeuf</b><span class="w3-right w3-tag w3-dark-grey w3-round">10,90€</span></p>
+        <p class="w3-text-grey">Frite</p>
+        <hr>
+
+        <p><b>Salade de gésiers aux lardons</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,90€</span></p>
+        <p class="w3-text-grey">Salade, gésier, lardon, champignon</p>
+        <hr>
+
+        <p><b>Salade landaise</b><span class="w3-right w3-tag w3-dark-grey w3-round">14,90€</span></p>
+        <p class="w3-text-grey">Salade, tomate, gésier, lardon, crottin de chavignol</p>
+        <hr>
+
+        <p><b>Salade paysanne</b><span class="w3-right w3-tag w3-dark-grey w3-round">11,90€</span></p>
+        <p class="w3-text-grey">Salade, lardon, pomme de terre, oignon, oeuf poché</p>
+        <hr>
+
+        <p><b>Salade Norvégienne</b><span class="w3-right w3-tag w3-dark-grey w3-round">14,90€</span></p>
+        <p class="w3-text-grey">Salade, saumon, avocat, crevette, sauce cocktail</p>
+        <hr>
+
+        <p><b>Salade du soleil italien</b><span class="w3-right w3-tag w3-dark-grey w3-round">14,90€</span></p>
+        <p class="w3-text-grey">Salade, tomate, oeuf, jambon de parme</p>
+        <hr>
+
+        <p><b>La parisienne</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,50€</span></p>
+        <p class="w3-text-grey">Salade verte, tomate, concombre, emmental, jambon, olive, carotte râpée</p>
+        <hr>
+
+        <p><b>Salade de la ferme</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,90€</span></p>
+        <p class="w3-text-grey">Salade verte, tomate, concombre, maïs, émincé de poulet, oeuf, olive</p>
+        <hr>
+
+        <p><b>Salade niçoise</b><span class="w3-right w3-tag w3-dark-grey w3-round">11,90€</span></p>
+        <p class="w3-text-grey">Salade verte, tomate, concombre, anchois, thon, haricot vert, poivron, oeuf, olive</p>
+        <hr>
+
+        <p><b>Salade italienne</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,90€</span></p>
+        <p class="w3-text-grey">Mélange de salades vertes, tomate, concombre, carrote râpée, maïs, thon, oeuf</p>
+        <hr>
+
+        <p><b>Salade exotique</b><span class="w3-right w3-tag w3-dark-grey w3-round">14,90€</span></p>
+        <p class="w3-text-grey">Salade, tomate, maïs, artichaut, ananas, avocat, carrote râpée, oeuf</p>
+        <hr>
+
+        <p><b>Salade océane</b><span class="w3-right w3-tag w3-dark-grey w3-round">15,90€</span></p>
+        <p class="w3-text-grey">Salade, tomate, maïs, concombre, avocat, saumon fumé, crevette, crabe, fromage</p>
+        <hr>
+
+        <p><b>Escargots</b><span class="w3-right w3-tag w3-dark-grey w3-round">7,00€</span></p>
+        <p class="w3-text-grey">Lot de six</p>
+        <hr>
+
+        <p><b>Escargots</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,90€</span></p>
+        <p class="w3-text-grey">Lot de douze</p>
+        <hr>
+
+        <p><b>Aubergine à la Parmigiana</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,90€</span></p>
+        <p class="w3-text-grey">Viande hâchée, aubergine gratinée</p>
+
+      </div>
+
+      <!-- charcuterie -->
+      <div id="charcuterie" class="w3-container laCarte w3-padding-16 w3-white w3-animate-opacity">
+
+        <p><b>Salami</b><span class="w3-right w3-tag w3-dark-grey w3-round">7,90€</span></p>
+        <hr>
+
+        <p><b>Coppa</b><span class="w3-right w3-tag w3-dark-grey w3-round">9,90€</span></p>
+        <hr>
+
+        <p><b>Cocktail italien</b><span class="w3-right w3-tag w3-dark-grey w3-round">15,90€</span></p>
+        <hr>
+
+        <p><b>Jambon de parme</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,90€</span></p>
+
+      </div>
+
+      <!-- pasta -->
+      <div id="pasta" class="w3-container laCarte w3-padding-16 w3-white w3-animate-opacity">
+
+        <p><b>Spaghetti bolognaise</b><span class="w3-right w3-tag w3-dark-grey w3-round">11,50€</span></p>
+        <p class="w3-text-grey">Sauce tomate, viande hachée</p>
+        <hr>
+
+        <p><b>Carbonara</b><span class="w3-right w3-tag w3-dark-grey w3-round">11,50€</span></p>
+        <p class="w3-text-grey">Crème fraîche, lardon, jaune d'oeuf</p>
+        <hr>
+
+        <p><b>4 fromages</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,50€</span></p>
+        <p class="w3-text-grey">4 fromages, crème fraîche</p>
+        <hr>
+
+        <p><b>Gorgonzola</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,50€</span></p>
+        <p class="w3-text-grey">Champignon, crème fraîche, gorgonzola</p>
+        <hr>
+
+        <p><b>Penne au thon</b><span class="w3-right w3-tag w3-dark-grey w3-round">11,50€</span></p>
+        <p class="w3-text-grey">Sauce tomate, thon, ail</p>
+        <hr>
+
+        <p><b>Saumon</b><span class="w3-right w3-tag w3-dark-grey w3-round">14,90€</span></p>
+        <p class="w3-text-grey">Saumon fumé, crème fraîche, vin blanc</p>
+        <hr>
+
+        <p><b>Parma</b><span class="w3-right w3-tag w3-dark-grey w3-round">13,90€</span></p>
+        <p class="w3-text-grey">Crème fraîche, champignon, jambon de parme</p>
+        <hr>
+
+        <p><b>Tagliatelle du chef</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,50€</span></p>
+        <p class="w3-text-grey">Petits pois, jambon, champignons, sauce tomate, crème fraîche</p>
+        <hr>
+
+        <p><b>Tagliatelle Magdalena</b><span class="w3-right w3-tag w3-dark-grey w3-round">17,50€</span></p>
+        <p class="w3-text-grey">Coquille Saint-Jacques, saumon fumé, champignon, crevette</p>
+        <hr>
+
+        <p><b>Lasagne</b><span class="w3-right w3-tag w3-dark-grey w3-round">12,50€</span></p>
+        <hr>
+
+        <p><b>Spaghetti à l'arrabiata </b><span class="w3-tag w3-light-green w3-round w3-large">Végétarienne</span><span class="w3-right w3-tag w3-dark-grey w3-round">10,90€</span></p>
+        <p class="w3-text-grey">Sauce tomate, ail, piment</p>
+        <hr>
+
+        <p><b>Spaghetti napolitaine </b><span class="w3-tag w3-light-green w3-round w3-large">Végétarienne</span><span class="w3-right w3-tag w3-dark-grey w3-round">9,90€</span></p>
+        <p class="w3-text-grey">Sauce tomate italienne</p>
+        <hr>
+
+        <p><b>Penne au pesto rosso </b><span class="w3-tag w3-light-green w3-round w3-large">Végétarienne</span><span class="w3-right w3-tag w3-dark-grey w3-round">10,90€</span></p>
+        <p class="w3-text-grey">Sauce tomate, crème fraîche</p>
+        <hr>
+
+        <p><b>Spaghetti à la provençale </b><span class="w3-tag w3-light-green w3-round w3-large">Végétarienne</span><span class="w3-right w3-tag w3-dark-grey w3-round">13,90€</span></p>
+        <p class="w3-text-grey">Crème fraîche, basilic, tomate, courgette, poivron, parmesan</p>
+        <hr>
+
+        <p><b>Penne max </b><span class="w3-tag w3-light-green w3-round w3-large">Végétarienne</span><span class="w3-right w3-tag w3-dark-grey w3-round">12,90€</span></p>
+        <p class="w3-text-grey">Sauce tomate, crème fraîche, aubergine, mozzarella fondue</p>
+
+      </div>
+
+      <!-- fromage -->
+      <div id="fromage" class="w3-container laCarte w3-padding-16 w3-white w3-animate-opacity">
+
+        <p><b>Gorgonzola</b><span class="w3-right w3-tag w3-dark-grey w3-round">5,90€</span></p>
+
+      </div>
+
+      <!-- boisson -->
+      <div id="boisson" class="w3-container laCarte w3-padding-16 w3-white w3-animate-opacity">
+
+        <p><b>Valpolicell </b><span class="w3-tag w3-chili-pepper w3-round w3-large">Vino rosso</span><span class="w3-right w3-tag w3-dark-grey w3-round">22,00€</span></p>
+        <p class="w3-text-grey w3-large">75cl</p>
+        <hr>
+
+        <p><b>Bardolino </b><span class="w3-tag w3-chili-pepper w3-round w3-large">Vino rosso</span><span class="w3-right w3-tag w3-dark-grey w3-round">22,00€</span></p>
+        <p class="w3-text-grey w3-large">75cl</p>
+        <hr>
+
+        <p><b>Chianti classico </b><span class="w3-tag w3-chili-pepper w3-round w3-large">Vino rosso</span><span class="w3-right w3-tag w3-dark-grey w3-round">28,00€</span></p>
+        <p class="w3-text-grey w3-large">75cl</p>
+        <hr>
+
+        <p><b>Lambrusco </b><span class="w3-tag w3-chili-pepper w3-round w3-large">Vino rosso</span><span class="w3-right w3-tag w3-dark-grey w3-round">20,00€</span></p>
+        <p class="w3-text-grey w3-large">75cl</p>
+        <hr>
+
+        <p><b>Bordolino </b><span class="w3-tag w3-pale-red w3-round w3-large">Vino rosato</span><span class="w3-right w3-tag w3-dark-grey w3-round">22,00€</span></p>
+        <p class="w3-text-grey w3-large">75cl</p>
+        <hr>
+
+        <p><b>Lacryma Christi Del </b><span class="w3-tag w3-pale-red w3-round w3-large">Vino rosato</span><span class="w3-right w3-tag w3-dark-grey w3-round">28,00€</span></p>
+        <p class="w3-text-grey w3-large">75cl</p>
+        <hr>
+
+        <p><b>Bardolino </b><span class="w3-tag w3-pale-red w3-round w3-large">Vino rosato</span><span class="w3-right w3-tag w3-dark-grey w3-round">12,60€</span></p>
+        <p class="w3-text-grey w3-large">37,5cl</p>
+        <hr>
+
+        <p><b>Frascati superiore </b><span class="w3-tag w3-pale-yellow w3-round w3-large">Vino bianco</span><span class="w3-right w3-tag w3-dark-grey w3-round">24,00€</span></p>
+        <p class="w3-text-grey w3-large">75cl</p>
+        <hr>
+
+        <p><b>Saint-Amour </b><span class="w3-tag w3-chili-pepper w3-round w3-large">Vin rouge</span><span class="w3-right w3-tag w3-dark-grey w3-round">28,00€</span></p>
+        <p class="w3-text-grey w3-large">75cl</p>
+        <hr>
+
+        <p><b>Bordeaux </b><span class="w3-tag w3-chili-pepper w3-round w3-large">Vin rouge</span><span class="w3-right w3-tag w3-dark-grey w3-round">20,00€</span></p>
+        <p class="w3-text-grey w3-large">75cl</p>
+        <hr>
+
+        <p><b>Côtes-du-Rhône </b><span class="w3-tag w3-chili-pepper w3-round w3-large">Vin rouge</span><span class="w3-right w3-tag w3-dark-grey w3-round">20,00€</span></p>
+        <p class="w3-text-grey w3-large">75cl</p>
+        <hr>
+
+        <p><b>Saumur-Champigny </b><span class="w3-tag w3-chili-pepper w3-round w3-large">Vin rouge</span><span class="w3-right w3-tag w3-dark-grey w3-round">28,00€</span></p>
+        <p class="w3-text-grey w3-large">75cl</p>
+        <hr>
+
+        <p><b>Côtes-de-Provence </b><span class="w3-tag w3-pale-red w3-round w3-large">Rosé</span><span class="w3-right w3-tag w3-dark-grey w3-round">22,00€</span></p>
+        <p class="w3-text-grey w3-large">75cl</p>
+        <hr>
+
+        <p><b>Tavel </b><span class="w3-tag w3-pale-red w3-round w3-large">Rosé</span><span class="w3-right w3-tag w3-dark-grey w3-round">30,00€</span></p>
+        <p class="w3-text-grey w3-large">75cl</p>
+        <hr>
+
+        <p><b>Côtes-de-Provence </b><span class="w3-tag w3-pale-red w3-round w3-large">Rosé</span><span class="w3-right w3-tag w3-dark-grey w3-round">12,60€</span></p>
+        <p class="w3-text-grey w3-large">37.5cl</p>
+        <hr>
+
+        <p><b>Pouilly-Fumé </b><span class="w3-tag w3-pale-yellow w3-round w3-large">Rosé</span><span class="w3-right w3-tag w3-dark-grey w3-round">33,00€</span></p>
+        <p class="w3-text-grey w3-large">75cl</p>
+
+      </div>
+
+    </div><br>
+  </div>
+</div>
+
+<!-- large and medium horaires -->
+<div class="w3-hide-small w3-container w3-broken-white w3-padding-64 w3-xlarge" id="contact">
+  <div class="w3-content w3-text-black">
+    <p class="w3-center w3-xxlarge" style="margin-bottom:64px">LES HORAIRES</p>
+    <div class="w3-row w3-center">
+      <div class="w3-col s4">
+        <p>Lundi</p>
+        <p>Mardi</p>
+        <p>Mercredi</p>
+        <p>Jeudi</p>
+        <p>Vendredi</p>
+        <p>Samedi</p>
+        <p>Dimanche</p>
+      </div>
+      <div class="w3-col s4">
+        <p>12h00 - 14h30</p>
+        <p>12h00 - 14h30</p>
+        <p>12h00 - 14h30</p>
+        <p>12h00 - 14h30</p>
+        <p>12h00 - 14h30</p>
+        <p>*</p>
+        <p>*</p>
+      </div>
+      <div class="w3-col s4">
+        <p>18h00 - 23h00</p>
+        <p>18h00 - 23h00</p>
+        <p>18h00 - 23h00</p>
+        <p>18h00 - 23h00</p>
+        <p>18h00 - 23h00</p>
+        <p>18h00 - 23h00</p>
+        <p>*</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- small horaires -->
+<div class="w3-hide-large w3-hide-medium w3-container w3-broken-white w3-padding-64 w3-large" id="contact2">
+  <div class="w3-content w3-text-black">
+    <p class="w3-center w3-xlarge" style="margin-bottom:64px">LES HORAIRES</p>
+    <div class="w3-row w3-center">
+      <div class="w3-col s4">
+        <p>Lundi</p>
+        <p>Mardi</p>
+        <p>Mercredi</p>
+        <p>Jeudi</p>
+        <p>Vendredi</p>
+        <p>Samedi</p>
+        <p>Dimanche</p>
+      </div>
+      <div class="w3-col s4">
+        <p>12h00 - 14h30</p>
+        <p>12h00 - 14h30</p>
+        <p>12h00 - 14h30</p>
+        <p>12h00 - 14h30</p>
+        <p>12h00 - 14h30</p>
+        <p>*</p>
+        <p>*</p>
+      </div>
+      <div class="w3-col s4">
+        <p>18h00 - 23h00</p>
+        <p>18h00 - 23h00</p>
+        <p>18h00 - 23h00</p>
+        <p>18h00 - 23h00</p>
+        <p>18h00 - 23h00</p>
+        <p>18h00 - 23h00</p>
+        <p>*</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- image allumette -->
+<img src="match.jpg" class="w3-image" style="width:100%;">
+
+<!-- large and medium à propos -->
+<div class="w3-hide-small w3-container w3-padding-64 w3-broken-white w3-xlarge" id="about">
+  <div class="w3-content w3-text-black w3-justify">
+    <p class="w3-center w3-xxlarge" style="margin-bottom:64px">À PROPOS</p>
+    <p>La Magdalena, votre restaurant pizzeria situé au <b>9 rue Camille Pelletan 92120 Montrouge</b>, vous accueille du lundi au samedi dans une ambiance décontractée et conviviale à deux pas de la porte de Châtillon.</p>
+    <p>Pizzas, salades, viandes, poissons, carpaccios et autres spécialités de qualité. Nous sommes heureux de vous accueillir pour vos repas de famille, dîners entre amis, anniversaires, mariages, enterrements de vie de garçon, dîners d'entreprises avec vos collaborateurs, repas d'affaires...</p>
+    <p>Appelez-nous au <b>01 57 63 83 12</b>.</p>
+    <!--<img src="match.jpg" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Restaurant">-->
+  </div>
+</div>
+
+<!-- small à propos -->
+<div class="w3-hide-large w3-hide-medium w3-container w3-padding-64 w3-broken-white w3-large" id="about2">
+  <div class="w3-content w3-text-black w3-justify">
+    <p class="w3-center w3-xlarge" style="margin-bottom:64px">À PROPOS</p>
+    <p>La Magdalena, votre restaurant pizzeria situé au <b>9 rue Camille Pelletan 92120 Montrouge</b>, vous accueille du lundi au samedi dans une ambiance décontractée et conviviale à deux pas de la porte de Châtillon.</p>
+    <p>Pizzas, salades, viandes, poissons, carpaccios et autres spécialités de qualité. Nous sommes heureux de vous accueillir pour vos repas de famille, dîners entre amis, anniversaires, mariages, enterrements de vie de garçon, dîners d'entreprises avec vos collaborateurs, repas d'affaires...</p>
+    <p>Appelez-nous au <b>01 57 63 83 12</b>.</p>
+    <!--<img src="match.jpg" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Restaurant">-->
+  </div>
+</div>
+
+<!-- large and medium footer -->
+<footer class="w3-hide-small w3-center w3-black w3-padding-32 w3-xlarge">
+  <p>Magdalena 2019</p>
+</footer>
+
+<!-- small footer -->
+<footer class="w3-hide-large w3-hide-medium w3-center w3-black w3-padding-32 w3-large">
+  <p>Magdalena 2019</p>
+</footer>
+
+<script>
+
+function openMenu(evt, menu, tablink, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName(menu);
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName(tablink);
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-indigo", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-indigo";
+}
+
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+document.getElementById("myLink").click();
+document.getElementById("myLink2").click();
+
+</script>
+
+</body>
+</html>
+
